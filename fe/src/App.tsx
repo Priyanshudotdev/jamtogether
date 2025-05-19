@@ -1,7 +1,8 @@
-import { useState, type ChangeEvent, type FormEvent } from 'react';
-import useMusic from './hooks/useMusic';
-import SongCard, { type SongData } from './components/SongCard';
-import TimePass from './components/TimePass';
+import { useState, type FormEvent } from 'react';
+import LibraryScreen from './components/music-library';
+import TimePass from './components/time-pass';
+import useMusic from './hooks/use-music';
+import { mockSong } from './libs/mock-data';
 
 function App() {
   const [userInput, setUserInput] = useState<string>('');
@@ -19,7 +20,10 @@ function App() {
   }
 
   return (
-    <TimePass />
+    <div className="flex flex-col md:flex-row w-full h-screen bg-blue-600 ">
+      <TimePass song={mockSong} />
+      <LibraryScreen />
+    </div>
     // <div>
     //   <form onSubmit={handleSubmit}>
     //     <input
