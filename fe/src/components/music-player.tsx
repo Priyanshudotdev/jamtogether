@@ -38,7 +38,13 @@ const MusicPlayer = () => {
 
   return (
     <div>
-      <YouTube videoId="dQw4w9WgXcQ" onReady={onReady} opts={opts} />
+      <YouTube
+        // title="Hii there"
+        loading="eager"
+        videoId="dQw4w9WgXcQ"
+        onReady={onReady}
+        opts={opts}
+      />
       <div className="flex items-center gap-x-2 ">
         <button
           className="bg-[#1a1a1a] p-2 rounded-md px-4 text-white cursor-pointer hover:opacity-[.7]"
