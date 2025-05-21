@@ -24,30 +24,6 @@ function App() {
       <TimePass song={mockSong} />
       <LibraryScreen />
     </div>
-    // <div>
-    //   <form onSubmit={handleSubmit}>
-    //     <input
-    //       type="text"
-    //       value={userInput}
-    //       onChange={(e: ChangeEvent<HTMLInputElement>) =>
-    //         setUserInput(e.target.value)
-    //       }
-    //     />
-    //     <button type="submit">Search</button>
-    //   </form>
-
-    //   {isLoading && <p>Loading...</p>}
-    //   {isError && <p>Error fetching songs</p>}
-    //   {songsData && (
-    //     <div>
-    //       <h3>Song Data:</h3>
-
-    //       {songsData.map((song: SongData) => {
-    //         return <SongCard song={song} key={song.publishedAt} />;
-    //       })}
-    //     </div>
-    //   )}
-    // </div>
   );
 }
 

@@ -3,63 +3,57 @@ import MusicVerticalCard from './music-vertical-card';
 
 const MusicLibrary = () => {
   return (
-    <div className="flex w-full flex-col bg-gradient-to-b from-[#450A0A] p-4 px-8 to-black">
+    <div className="flex w-full flex-col p-4 px-8 {bg-gradient-to-b to-black} bg-primary">
       <div className="flex w-full justify-between">
-        <h1 className="text-xl font-semibold">Your Library</h1>
-        <span className="p-2 rounded-full">
-          <Plus className="size-4 p-2" />
+        <h1 className="text-xl font-semibold text-white">Your Library</h1>
+        <span className="p-2 rounded-full hover:bg-black/20 cursor-pointer">
+          <Plus className="size-4 text-white" />
         </span>
       </div>
-      <div className="w-full flex gap-5 items-center mt-6">
+
+      {/* Search Song */}
+      <div className="w-full flex gap-5 items-center mt-6 relative">
         <input
           type="text"
-          name=""
-          className=" relative h-10 w-full bg-transparent p-1 text-sm rounded-md border-[1px] pl-10 border-[#EF4444]/10"
-          id=""
-          placeholder="Search songs or past youtube url"
+          className="relative h-10 w-full bg-transparent p-1 text-sm rounded-md border-[1px] pl-10 text-white border-white/10"
+          placeholder="Search songs or paste YouTube URL"
         />
-        <span className="absolute ml-3 ">
-          <Search className="size-4 text-zinc-300 " />
+        <span className="absolute ml-3">
+          <Search className="size-4 text-zinc-300" />
         </span>
-        <p className="text-sm">Recents</p>
+        <p className="text-sm text-white">Recents</p>
       </div>
+
+      {/* Recent songs */}
       <div className="mt-5 flex flex-col gap-y-5">
-        <h1 className="text-sm tracking-wide text-zinc-300 font-semibold ">
+        <h1 className="text-sm tracking-wide text-zinc-300 font-semibold">
           Recent Songs
         </h1>
         <div className="flex flex-col gap-y-1">
-          <MusicVerticalCard />
-          <MusicVerticalCard />
-          <MusicVerticalCard />
-          <MusicVerticalCard />
-          <MusicVerticalCard />
-          <MusicVerticalCard />
+          {[...Array(6)].map((_, i) => (
+            <MusicVerticalCard key={i} />
+          ))}
         </div>
-        <h1 className="text-sm tracking-wide text-zinc-300 font-semibold ">
+
+        {/* Playlist */}
+        <h1 className="text-sm tracking-wide text-zinc-300 font-semibold">
           Your Playlist
         </h1>
         <div className="flex flex-col gap-y-1">
-          {/* Card Component */}
-          <div className="w-full flex flex-col md:flex-row items-center gap-2">
-            <div className="w-full p-2 rounded h-14 items-center backdrop-blur-2xl hover:bg-[#601010]/80 cursor-pointer bg-[#2d0606] flex gap-x-2 ">
-              <span className="size-10 flex items-center justify-center bg-[#601010] rounded">
-                <Music className="mr-1 size-5" />
+          {[{ name: 'Favorites' }, { name: 'Chill Vibes' }].map((item, idx) => (
+            <div
+              key={idx}
+              className="w-full p-2 hover:bg-accent rounded-lg h-14 items-center backdrop-blur-2xl cursor-pointer flex gap-x-2"
+            >
+              <span className="size-10 flex items-center justify-center bg-secondary rounded-lg">
+                <Music className="size-5 text-white" />
               </span>
               <div className="ml-1 flex flex-col">
-                <h1 className="text-sm text-zinc-200">Favorites</h1>
-                <p className="text-xs text-zinc-300 ">3 songs</p>
+                <h1 className="text-sm text-zinc-200">{item.name}</h1>
+                <p className="text-xs text-zinc-300">3 songs</p>
               </div>
             </div>
-            <div className="w-full p-2 rounded h-14 items-center backdrop-blur-2xl hover:bg-[#601010]/80 cursor-pointer bg-[#2d0606] flex gap-x-2 ">
-              <span className="size-10 flex items-center justify-center bg-[#601010] rounded">
-                <Music className="mr-1 size-5" />
-              </span>
-              <div className="ml-1 flex flex-col">
-                <h1 className="text-sm text-zinc-200">Chill Vibes</h1>
-                <p className="text-xs text-zinc-300 ">3 songs</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
