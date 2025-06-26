@@ -1,5 +1,5 @@
 import MusicLibrary from '../components/music-library';
-import TimePass from '../components/time-pass';
+import TimePass from '../components/music-player';
 import { mockSong } from '../libs/mock-data';
 
 const ThemeToggleScreen = () => {

@@ -81,7 +81,7 @@ export default function App() {
           ref={urlInputRef}
           type="text"
           placeholder="Enter audio/video URL"
-          className="w-full px-4 py-2 text-black rounded-md border text-white border-gray-300"
+          className="w-full px-4 py-2 rounded-md border text-white border-gray-300"
         />
         <button
           onClick={handleLoadCustomUrl}

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import LibraryScreen from './components/music-library';
-import TimePass from './components/time-pass';
+import TimePass from './components/music-player';
 import useMusic from './hooks/use-music';
 import { mockSong } from './libs/mock-data';
 
@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-screen bg-blue-600 ">
+    <div className="flex flex-col md:flex-row w-full h-screen ">
       <TimePass song={mockSong} />
       <LibraryScreen />
     </div>

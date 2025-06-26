@@ -9,7 +9,7 @@ const SideBar: React.FC = () => {
   ];
 
   return (
-    <div className="flex md:flex-col bg-primary items-center justify-between md:justify-start gap-y-10 w-full h-16 md:w-20 md:h-screen z-50">
+    <div className="flex md:flex-col {bg-primary} items-center justify-between md:justify-start gap-y-10 w-full h-16 md:w-20 md:h-screen z-50">
       <div className="px-5 md:px-0 md:flex items-center w-full justify-center mt-2">
         <div className="cursor-pointer w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
           <h1 className="text-white">C</h1>
